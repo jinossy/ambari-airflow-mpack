@@ -1,10 +1,12 @@
 # Apache Airflow management pack for Apache Ambari (airflow-ambari-mpack)
 
+Work In Progress:  Upgrading for Airflow 1.10.10, HDP 3, and Ambari 2.7.x
+
 [![Mpack version](https://img.shields.io/badge/Mpack%20version-1.5.4-brightgreen.svg)](https://github.com/miho120/ambari-airflow-mpack)
 [![License](http://img.shields.io/:license-Apache%202-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.txt)
 
 Mpack allows you to install/configure airflow directly from ambari.
-Apache Airflow version included: 1.10.0
+Apache Airflow version included: 1.10.10
 
 #### Installing Apache Aiflow Mpack:
 1. Stop Ambari server.
@@ -14,6 +16,16 @@ Apache Airflow version included: 1.10.0
 ```
 ambari-server stop
 ambari-server install-mpack --mpack=airflow-service-mpack.tar.gz
+ambari-server start
+```
+#### Uninstall Apache Aiflow Mpack:
+1. Stop Ambari server.
+2. Uninstall the Apache Airflow Mpack on Ambari server.
+3. Start Ambari server.
+
+```
+ambari-server stop
+ambari-server uninstall-mpack --mpack-name=airflow-ambari-mpack
 ambari-server start
 ```
 
